@@ -1,7 +1,7 @@
-import ReduxPersist from '../Config/ReduxPersist'
+import ReduxPersist from '../../shared/Config/ReduxPersist'
 import { AsyncStorage } from 'react-native'
 import { persistStore } from 'redux-persist'
-import StartupActions from '../Redux/StartupRedux'
+import StartupActions from '../../shared/Redux/StartupRedux'
 
 const updateReducers = (store: Object) => {
   const reducerVersion = ReduxPersist.reducerVersion

@@ -1,8 +1,8 @@
-import '../../shared/Config'
+import '../Config'
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
-import createStore from '../../shared/Redux'
+import createStore from '../Redux'
 
 // create our store
 const store = createStore()

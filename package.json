@@ -34,6 +34,7 @@
     "querystringify": "0.0.4",
     "ramda": "^0.23.0",
     "react": "~15.4.1",
+    "react-dom": "^15.5.1",
     "react-native": "0.42.0",
     "react-native-animatable": "^1.2.0",
     "react-native-config": "^0.2.1",
@@ -47,9 +48,7 @@
     "redux-persist": "^4.1.0",
     "redux-saga": "^0.14.3",
     "reduxsauce": "0.4.1",
-    "seamless-immutable": "^7.0.1",
-
-    "react-dom": "^15.5.1"
+    "seamless-immutable": "^7.0.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
@@ -73,12 +72,12 @@
     "react-dom": "^15.4.0",
     "react-native-mock": "^0.3.1",
     "reactotron-apisauce": "^1.7.0",
+    "reactotron-react-js": "^1.10.0",
     "reactotron-react-native": "^1.7.0",
     "reactotron-redux": "^1.7.0",
     "reactotron-redux-saga": "^1.7.0",
     "snazzy": "^6.0.0",
     "standard": "8.6.0",
-
     "react-scripts": "0.9.5"
   },
   "ava": {

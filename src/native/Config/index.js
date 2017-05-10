@@ -1,5 +1,5 @@
 import { Text } from 'react-native'
-import DebugConfig from './DebugConfig'
+import DebugConfig from '../../shared/Config/DebugConfig'
 import AppConfig from './AppConfig'
 
 export default () => {
