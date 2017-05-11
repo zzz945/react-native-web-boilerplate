@@ -1,5 +1,5 @@
-import ReduxPersist from '../../shared/Config/ReduxPersist'
-import { AsyncStorage } from 'react-native'
+import ReduxPersist from '../Config/ReduxPersist'
+import localforage from 'localforage'
 import { persistStore } from 'redux-persist'
 import StartupActions from '../../shared/Redux/StartupRedux'
 
@@ -9,7 +9,7 @@ const updateReducers = (store: Object) => {
   const startup = () => store.dispatch(StartupActions.startup())
 
   // Check to ensure latest reducer version
-  AsyncStorage.getItem('reducerVersion').then((localVersion) => {
+  localforage.getItem('reducerVersion').then((localVersion) => {
     if (localVersion !== reducerVersion) {
       console.tron.display({
         name: 'PURGE',
@@ -22,13 +22,13 @@ const updateReducers = (store: Object) => {
       })
       // Purge store
       persistStore(store, config, startup).purge()
-      AsyncStorage.setItem('reducerVersion', reducerVersion)
+      localforage.setItem('reducerVersion', reducerVersion)
     } else {
       persistStore(store, config, startup)
     }
   }).catch(() => {
     persistStore(store, config, startup)
-    AsyncStorage.setItem('reducerVersion', reducerVersion)
+    localforage.setItem('reducerVersion', reducerVersion)
   })
 }
 

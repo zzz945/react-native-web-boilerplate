@@ -4,7 +4,7 @@ import GithubActions from '../Redux/GithubRedux'
 
 export function * getUserAvatar (api, action) {
   const { username } = action
-  // make the call to the api
+  // make the call to the api, will fail because of cross domain request
   const response = yield call(api.getUser, username)
 
   if (response.ok) {

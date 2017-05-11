@@ -3,7 +3,7 @@ import { autoRehydrate } from 'redux-persist'
 import Config from '../../shared/Config/DebugConfig'
 import createSagaMiddleware from 'redux-saga'
 import RehydrationServices from '../Services/RehydrationServices'
-import ReduxPersist from '../../shared/Config/ReduxPersist'
+import ReduxPersist from '../Config/ReduxPersist'
 
 // creates the store
 export default (rootReducer, rootSaga) => {
@@ -14,7 +14,7 @@ export default (rootReducer, rootSaga) => {
 
   /* ------------- Saga Middleware ------------- */
 
-  const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null
+  const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null // eslint-disable-line
   const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
   middleware.push(sagaMiddleware)
 

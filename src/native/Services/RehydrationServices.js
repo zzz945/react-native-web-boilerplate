@@ -1,4 +1,4 @@
-import ReduxPersist from '../../shared/Config/ReduxPersist'
+import ReduxPersist from '../Config/ReduxPersist'
 import { AsyncStorage } from 'react-native'
 import { persistStore } from 'redux-persist'
 import StartupActions from '../../shared/Redux/StartupRedux'
