@@ -1,7 +1,7 @@
 #  IgniteBoilerplate
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+* A React and React Native boilerplate for web ios and android apps. This project is heavily based on [ignite-ir-next](https://github.com/infinitered/ignite) and  [react-scripts](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
 
 ## :arrow_up: How to Setup
 
