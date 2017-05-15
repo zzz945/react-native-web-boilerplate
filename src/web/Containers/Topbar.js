@@ -36,6 +36,11 @@ const NavLink = muiThemeable()(styled(Link)`
   }
 `)
 
+const Nav = styled.div`
+  display: flex;
+  alignItems: center;
+`
+
 class Topbar extends Component {
   styles = {
     nav: {
@@ -49,11 +54,11 @@ class Topbar extends Component {
       <Container>
         <Wrapper>
           <MyPhotoAvatar src={require('../Images/myphoto.png')} size={64} />
-          <div style={this.styles.nav}>
+          <Nav>
             <NavLink primary to='/'>我的故事</NavLink>
             <NavLink to='/'>我的研究</NavLink>
             <NavLink to='/'>我想说</NavLink>
-          </div>
+          </Nav>
         </Wrapper>
       </Container>
     )
