@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import StartupActions from '../../shared/Redux/StartupRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 
+
 class RootContainer extends Component {
 
   componentDidMount () {

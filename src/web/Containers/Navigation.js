@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 
 import {
   BrowserRouter as Router,
@@ -6,70 +7,67 @@ import {
   Link
 } from 'react-router-dom'
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
+import muiThemeable from 'material-ui/styles/muiThemeable'
 
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
+import Topbar from './Topbar'
 
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-)
+const Container = styled.div`
+  display: flex;
+`
 
-const Topics = ({ match }) => (
-  <div>
-    <h2>Topics</h2>
-    <ul>
-      <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/components`}>
-          Components
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
-        </Link>
-      </li>
-    </ul>
+const Header = muiThemeable()(styled.div`
+  padding-top: 128px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 512px;
+  align-items: center;
+  justify-content: center;
+  background-color: ${props => props.muiTheme.palette.primary2Color};
+  background-image: url(${require('../Images/header1280.png')});
+  background-blend-mode: overlay;
+`)
 
-    <Route path={`${match.url}/:topicId`} component={Topic} />
-    <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
-    )} />
-  </div>
-)
+const HeaderTitle = muiThemeable()(styled.h1`
+  text-align: center;
+  color: ${props => props.muiTheme.palette.alternateTextColor};
+`)
 
-export default class Navigation extends Component {
+class Navigation extends Component {
+  styles = {
+    container: {
+      display: 'flex'
+    },
+    header: {
+      paddingTop: 128,
+      display: 'flex',
+      flex: 1,
+      flexDirection: 'column',
+      height: 512,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: this.props.muiTheme.palette.primary2Color,
+      backgroundImage: `url(${require('../Images/header1280.png')})`,
+      backgroundBlendMode: 'overlay'
+    },
+    headerTitle: {
+      textAlign: 'center',
+      color: 'white'
+    }
+  }
+
   render () {
     return (
       <Router>
-        <div>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/about'>About</Link></li>
-            <li><Link to='/topics'>Topics</Link></li>
-          </ul>
-
-          <hr />
-
-          <Route exact path='/' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/topics' component={Topics} />
-        </div>
+        <Container>
+          <Topbar />
+          <Header>
+            <h1 style={this.styles.headerTitle}>你好，我叫张岱岩，一个全栈设计师</h1>
+          </Header>
+        </Container>
       </Router>
     )
   }
 }
+
+export default muiThemeable()(Navigation)
