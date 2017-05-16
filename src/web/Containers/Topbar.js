@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Avatar from 'material-ui/Avatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import styled from 'styled-components'
+import Svg from '../Images/Svg'
 
 import {
   Link
@@ -10,29 +11,29 @@ import {
 const Container = styled.div`
   position: fixed;
   top: 0;
-  height: 128px;
   width: 100%;
 `
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 1024px;
   margin: 0 auto;
 `
 
 const MyPhotoAvatar = muiThemeable()(styled(Avatar)`
-  marginTop: 32px;
-  border: ${props => '8px solid ' + props.muiTheme.palette.alternateTextColor};
+  margin: 16px 16px 16px 0;
+  border: 2px solid ${props => props.muiTheme.palette.alternateTextColor};
 `)
 
 const NavLink = muiThemeable()(styled(Link)`
-  color: ${props => props.primary ? props.muiTheme.palette.alternateTextColor : props.muiTheme.palette.borderColor};
+  color: ${props => props.muiTheme.palette.alternateTextColor};
   font-size: 16px;
   text-decoration: none;
-  margin: 10px;
+  margin: 32px 10px;
   &:hover {
-    color: ${props => props.muiTheme.palette.alternateTextColor};
+    color: ${props => props.muiTheme.palette.primary1Color};
   }
 `)
 
@@ -40,6 +41,19 @@ const Nav = styled.div`
   display: flex;
   alignItems: center;
 `
+
+const ContactWrapper = styled.div`
+  display: flex;
+  alignItems: center;
+`
+
+const ContactIcon = muiThemeable()(
+  ({style, svgData, muiTheme}) => {
+    return (
+      <Svg.SvgCustomIcon style={{margin: '16 10', cursor: 'pointer'}} svgData={svgData} color={muiTheme.palette.alternateTextColor} hoverColor={muiTheme.palette.primary1Color} />
+    )
+  }
+)
 
 class Topbar extends Component {
   styles = {
@@ -53,12 +67,16 @@ class Topbar extends Component {
     return (
       <Container>
         <Wrapper>
-          <MyPhotoAvatar src={require('../Images/myphoto.png')} size={64} />
           <Nav>
-            <NavLink primary to='/'>我的故事</NavLink>
-            <NavLink to='/'>我的研究</NavLink>
-            <NavLink to='/'>我想说</NavLink>
+            <MyPhotoAvatar src={require('../Images/myphoto.png')} size={48} />
+            <NavLink to='/'>关于我</NavLink>
+            <NavLink to='/'>文章</NavLink>
           </Nav>
+          <ContactWrapper>
+            <ContactIcon svgData={Svg.email} />
+            <ContactIcon svgData={Svg.wechat} />
+            <ContactIcon svgData={Svg.qq} />
+          </ContactWrapper>
         </Wrapper>
       </Container>
     )
