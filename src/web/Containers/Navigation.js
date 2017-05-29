@@ -7,8 +7,6 @@ import {
 } from 'react-router-dom'
 
 import muiThemeable from 'material-ui/styles/muiThemeable'
-
-import Topbar from './Topbar'
 import AboutMe from './AboutMe'
 
 class Navigation extends Component {
@@ -16,7 +14,6 @@ class Navigation extends Component {
     return (
       <Router>
         <div>
-          <Topbar />
           <AboutMe />
         </div>
       </Router>

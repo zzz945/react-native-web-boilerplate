@@ -1,83 +1,52 @@
 import React, {Component} from 'react'
-import Avatar from 'material-ui/Avatar'
 import muiThemeable from 'material-ui/styles/muiThemeable'
+import RaisedButton from 'material-ui/RaisedButton'
 import styled from 'styled-components'
-import Svg from '../Images/Svg'
 
-import {
-  Link
-} from 'react-router-dom'
+import {Center} from './CommonStyledComponents'
 
-const Container = styled.div`
+const Container = muiThemeable()(styled.nav`
+  z-index: 1001;
+  display: flex;
   position: fixed;
   top: 0;
+  height: 75px;
   width: 100%;
-`
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 1024px;
-  margin: 0 auto;
-`
-
-const MyPhotoAvatar = muiThemeable()(styled(Avatar)`
-  margin: 16px 16px 16px 0;
-  border: 2px solid ${props => props.muiTheme.palette.alternateTextColor};
+  box-shadow: 0px 0px 3px ${props => props.muiTheme.palette.shadowColor};;
+  background: ${props => props.isTransparent ? 'rgba(255, 255, 255, 0.25)' : props.muiTheme.palette.canvasColor};
+  transition: all .3s ease-in-out;
 `)
 
-const NavLink = muiThemeable()(styled(Link)`
-  color: ${props => props.muiTheme.palette.alternateTextColor};
-  font-size: 16px;
+// eslint-disable-next-line
+const NavLink = muiThemeable()(styled.a`
+  font-size: 12px;
   text-decoration: none;
-  margin: 32px 10px;
+  margin: 0 10px;
+  color: ${props => props.isTransparent ? props.muiTheme.palette.alternateTextColor : '#898989'};
   &:hover {
     color: ${props => props.muiTheme.palette.primary1Color};
   }
 `)
 
-const Nav = styled.div`
-  display: flex;
-  alignItems: center;
-`
-
-const ContactWrapper = styled.div`
-  display: flex;
-  alignItems: center;
-`
-
-const ContactIcon = muiThemeable()(
-  ({style, svgData, muiTheme}) => {
-    return (
-      <Svg.SvgCustomIcon style={{margin: '16 10', cursor: 'pointer'}} svgData={svgData} color={muiTheme.palette.alternateTextColor} hoverColor={muiTheme.palette.primary1Color} />
-    )
+const Logo = muiThemeable()(styled.a`
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: ${props => props.isTransparent ? props.muiTheme.palette.alternateTextColor : props.muiTheme.palette.primary1Color};
+  &:hover {
+    color: ${props => props.muiTheme.palette.textColor};
   }
-)
+`)
 
 class Topbar extends Component {
-  styles = {
-    nav: {
-      display: 'flex',
-      alignItems: 'center'
-    }
-  }
-
   render () {
     return (
-      <Container>
-        <Wrapper>
-          <Nav>
-            <MyPhotoAvatar src={require('../Images/myphoto.png')} size={48} />
-            <NavLink to='/'>关于我</NavLink>
-            <NavLink to='/'>文章</NavLink>
-          </Nav>
-          <ContactWrapper>
-            <ContactIcon svgData={Svg.email} />
-            <ContactIcon svgData={Svg.wechat} />
-            <ContactIcon svgData={Svg.qq} />
-          </ContactWrapper>
-        </Wrapper>
+      <Container isTransparent={this.props.isTransparent}>
+        <Center style={{flex: 1, margin: '0 28px', justifyContent: 'space-between'}}>
+          <Logo isTransparent={this.props.isTransparent} href='#'>ET</Logo>
+          <RaisedButton href='mailto:zhangdaiyan@163.com' style={{fontSize: 12, marginLeft: 24}} label={'与我联系'} primary />
+        </Center>
       </Container>
     )
   }
