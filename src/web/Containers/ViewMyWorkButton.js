@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import styled from 'styled-components'
+import {FormattedMessage} from 'react-intl'
 import {Center, Link} from './CommonStyledComponents'
 
 const Container = muiThemeable()(styled(Center)`
@@ -43,11 +44,11 @@ class HireMeButton extends Component {
     let { hover } = this.state
 
     return (
-      <Link style={{display: 'block'}} href='https://github.com/zzz945/'>
-        <Container style={{zIndex: 100, opacity: this.props.opacity, marginTop: 28}} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+      <Link style={{display: 'inline-block'}} href='https://github.com/zzz945/'>
+        <Container style={{zIndex: 100, opacity: this.props.opacity}} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <Background hover={hover} />
           <p style={{zIndex: 1000, color: hover ? this.props.muiTheme.palette.primary1Color : this.props.muiTheme.palette.alternateTextColor}}>
-            我的作品
+            <FormattedMessage id='header.works' />
           </p>
         </Container>
       </Link>

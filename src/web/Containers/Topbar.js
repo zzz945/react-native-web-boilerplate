@@ -2,8 +2,9 @@ import React, {Component} from 'react'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import RaisedButton from 'material-ui/RaisedButton'
 import styled from 'styled-components'
+import {FormattedMessage} from 'react-intl'
 
-import {Center} from './CommonStyledComponents'
+import {Center, Link} from './CommonStyledComponents'
 
 const Container = muiThemeable()(styled.nav`
   z-index: 1001;
@@ -17,15 +18,9 @@ const Container = muiThemeable()(styled.nav`
   transition: all .3s ease-in-out;
 `)
 
-// eslint-disable-next-line
-const NavLink = muiThemeable()(styled.a`
+const LocaleLink = muiThemeable()(styled(Link)`
   font-size: 12px;
-  text-decoration: none;
-  margin: 0 10px;
-  color: ${props => props.isTransparent ? props.muiTheme.palette.alternateTextColor : '#898989'};
-  &:hover {
-    color: ${props => props.muiTheme.palette.primary1Color};
-  }
+  color: ${props => props.isTransparent ? props.muiTheme.palette.alternateTextColor : props.muiTheme.palette.thirdTextColor};
 `)
 
 const Logo = muiThemeable()(styled.a`
@@ -41,11 +36,18 @@ const Logo = muiThemeable()(styled.a`
 
 class Topbar extends Component {
   render () {
+    let {isTransparent} = this.props
+    let {alternateTextColor, thirdTextColor} = this.props.muiTheme.palette
     return (
-      <Container isTransparent={this.props.isTransparent}>
-        <Center style={{flex: 1, margin: '0 28px', justifyContent: 'space-between'}}>
-          <Logo isTransparent={this.props.isTransparent} href='#'>ET</Logo>
-          <RaisedButton href='mailto:zhangdaiyan@163.com' style={{fontSize: 12, marginLeft: 24}} label={'与我联系'} primary />
+      <Container isTransparent={isTransparent}>
+        <Center style={{flex: 1, padding: `0 ${this.props.muiTheme.padding}px`, justifyContent: 'space-between'}}>
+          <Logo isTransparent={isTransparent} href='#'>ET</Logo>
+          <div>
+            <span style={{fontSize: 12, color: isTransparent ? alternateTextColor : thirdTextColor}}>
+              <LocaleLink isTransparent={isTransparent} href='http://localhost:8000/zh'>中文</LocaleLink>/<LocaleLink isTransparent={isTransparent} href='http://localhost:8000/en'>English</LocaleLink>
+            </span>
+            <RaisedButton href='mailto:zhangdaiyan@163.com' style={{fontSize: 12, marginLeft: 24}} label={<FormattedMessage id='nav.contact' />} primary />
+          </div>
         </Center>
       </Container>
     )

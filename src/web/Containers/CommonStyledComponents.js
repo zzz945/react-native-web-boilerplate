@@ -40,7 +40,6 @@ export const SubTitleLight = muiThemeable()(styled(SubTitleDark)`
 `)
 
 export const ContentDark = muiThemeable()(styled.p`
-  text-align: center;
   font-size: 14px;
   letter-spacing: 0.1em;
   line-height: 2em;
@@ -54,4 +53,9 @@ export const ContentLight = muiThemeable()(styled(ContentDark)`
 export const Link = muiThemeable()(styled.a`
   text-decoration: none;
   color: ${props => props.muiTheme.palette.primary2Color};
+`)
+
+export const ContentContainer = muiThemeable()(styled.div`
+  padding: ${props => props.muiTheme.padding}px;
+  box-sizing: border-box;
 `)

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import styled from 'styled-components'
+import {FormattedMessage} from 'react-intl'
 import {Center, Link} from './CommonStyledComponents'
 import Svg from '../Images/Svg'
 
@@ -50,9 +51,9 @@ class HireMeButton extends Component {
           <div style={{zIndex: 100, color: hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor}}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <Svg.SvgCustomIcon svgData={Svg.email} color={hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor} />
-              <p style={{fontWeight: 'bold', lineHeight: 2, fontSize: 24, margin: '0 8px'}}>与我联系</p>
+              <p style={{fontWeight: 'bold', lineHeight: 2, fontSize: 24, margin: '0 8px'}}><FormattedMessage id='contact.button.title' /></p>
             </div>
-            <p style={{textAlign: 'center', lineHeight: 2, fontSize: 12, margin: 0}}>共同打造富有想象力的产品</p>
+            <p style={{textAlign: 'center', lineHeight: 2, fontSize: 12, margin: 0}}><FormattedMessage id='contact.button.description' /></p>
           </div>
         </Container>
       </Link>
