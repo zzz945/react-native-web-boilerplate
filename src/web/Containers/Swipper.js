@@ -3,7 +3,7 @@ import muiThemeable from 'material-ui/styles/muiThemeable'
 import SwipeableViews from 'react-swipeable-views'
 import styled from 'styled-components'
 import {FormattedMessage} from 'react-intl'
-import {HCenter, Center, ContentLight, Link, ContentContainer} from './CommonStyledComponents'
+import {HCenter, Center, ContentLight, Link} from './CommonStyledComponents'
 import Pagination from '../Components/SwipperPagination/Pagination'
 
 const Swiper = styled(SwipeableViews)`

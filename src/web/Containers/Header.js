@@ -12,8 +12,6 @@ import ViewMyWorkButton from './ViewMyWorkButton'
 const Container = muiThemeable()(styled.div`
 `)
 
-
-
 const Background = muiThemeable()(styled(ContentContainer)`
   display: flex;
   justify-content: center;
