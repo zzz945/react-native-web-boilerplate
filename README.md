@@ -20,8 +20,12 @@
     * run `react-native run-ios`
   * for Android
     * run `react-native run-android`
-  * for Web
+  * for Web (development without server rendering and server api)
     * run `npm run web-start`
+  * for Web (production)
+    * install mongodb
+    * run `npm run server-start`
+    * open localhost:8000 in browser
 
 ## :no_entry_sign: Standard Compliant
 
