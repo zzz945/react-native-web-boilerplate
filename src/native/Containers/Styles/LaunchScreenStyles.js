@@ -13,6 +13,8 @@ export default StyleSheet.create({
     resizeMode: 'contain'
   },
   centered: {
-    alignItems: 'center'
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import StartupActions from '../../shared/Redux/StartupRedux'
 import ReduxPersist from '../Config/ReduxPersist'
 
-import {IntlProvider, addLocaleData} from 'react-intl'
+/*import {IntlProvider, addLocaleData} from 'react-intl'
 import enLocaleData from 'react-intl/locale-data/en'
 import zhLocaleData from 'react-intl/locale-data/zh'
 
@@ -12,7 +12,7 @@ if (!global.Intl) {
   global.Intl = require('intl')
 }
 
-addLocaleData([...enLocaleData, ...zhLocaleData])
+addLocaleData([...enLocaleData, ...zhLocaleData])*/
 
 class RootContainer extends Component {
   componentDidMount () {
@@ -23,12 +23,8 @@ class RootContainer extends Component {
   }
 
   render () {
-    console.log(window.__LOCALE__)
-    console.log(window.__TRANSLATION__)
     return (
-      <IntlProvider locale={window.__LOCALE__} messages={window.__TRANSLATION__}>
-        <Navigation />
-      </IntlProvider>
+      <Navigation />
     )
   }
 }

@@ -8,6 +8,16 @@ import MyTheme from '../Themes/MyTheme'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
 
+import {IntlProvider, addLocaleData} from 'react-intl'
+import enLocaleData from 'react-intl/locale-data/en'
+import zhLocaleData from 'react-intl/locale-data/zh'
+
+if (!global.Intl) {
+  global.Intl = require('intl')
+}
+
+addLocaleData([...enLocaleData, ...zhLocaleData])
+
 // material-ui: Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin()
@@ -29,7 +39,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <MuiThemeProvider muiTheme={getMuiTheme(MyTheme)}>
-          <RootContainer />
+          <IntlProvider locale={window.__LOCALE__} messages={window.__TRANSLATION__}>
+            <RootContainer />
+          </IntlProvider>
         </MuiThemeProvider>
       </Provider>
     )

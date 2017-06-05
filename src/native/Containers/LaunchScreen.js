@@ -1,29 +1,46 @@
 import React from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
-import { Images } from '../Themes'
+import {FormattedMessage} from 'react-intl'
+import { Text, View } from 'react-native'
+import { Colors } from '../Themes'
+import Api from '../../shared/Services/Api'
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      visit: 0
+    }
+    Api.create().getVisit().then(response => {
+      if (response.ok) this.setState({visit: response.data})
+      else this.setState({visit: -1})
+    })
+  }
 
+  getMessage = () => {
+    if (this.state.visit === 0) return <FormattedMessage id='state.loading' />
+    else if (this.state.visit === -1) return <FormattedMessage id='state.error.network' />
+    else {
+      return (
+        <FormattedMessage
+          id='introduction.title'
+          values={{
+            count: <Text style={{color: Colors.primary1Color}}>{this.state.visit}</Text>
+          }}
+        />
+      )
+    }
+  }
   render () {
     return (
       <View style={styles.mainContainer}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
-        <ScrollView style={styles.container}>
-          <View style={styles.centered}>
-            <Image source={Images.launch} style={styles.logo} />
-          </View>
-
-          <View style={styles.section} >
-            <Image source={Images.ready} />
-            <Text style={styles.sectionText}>
-              This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
-            </Text>
-          </View>
-
-        </ScrollView>
+        <View style={styles.centered}>
+          <Text style={styles.titleText}>
+            {this.getMessage()}
+          </Text>
+        </View>
       </View>
     )
   }

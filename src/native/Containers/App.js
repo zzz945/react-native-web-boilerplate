@@ -1,8 +1,16 @@
 import '../Config'
 import React, { Component } from 'react'
+import { Text } from 'react-native'
 import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
+
+import DeviceInfo from 'react-native-device-info'
+import {IntlProvider, addLocaleData} from 'react-intl'
+import enLocaleData from 'react-intl/locale-data/en'
+import zhLocaleData from 'react-intl/locale-data/zh'
+
+addLocaleData([...enLocaleData, ...zhLocaleData])
 
 // create our store
 const store = createStore()
@@ -18,9 +26,15 @@ const store = createStore()
  */
 class App extends Component {
   render () {
+    const locale = DeviceInfo.getDeviceLocale()
     return (
       <Provider store={store}>
-        <RootContainer />
+        <IntlProvider
+          locale={locale}
+          messages={locale === 'en' ? require('../../shared/Translations/en_US').default : require('../../shared/Translations/zh_CN').default}
+          textComponent={Text}>
+          <RootContainer />
+        </IntlProvider>
       </Provider>
     )
   }

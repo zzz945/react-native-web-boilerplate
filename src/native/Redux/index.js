@@ -5,8 +5,7 @@ import rootSaga from '../../shared/Sagas/'
 export default () => {
   /* ------------- Assemble The Reducers ------------- */
   const rootReducer = combineReducers({
-    login: require('../../shared/Redux/LoginRedux').reducer,
-    search: require('../../shared/Redux/SearchRedux').reducer
+    login: require('../../shared/Redux/LoginRedux').reducer
   })
 
   return configureStore(rootReducer, rootSaga)

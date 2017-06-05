@@ -1,6 +1,8 @@
 const contact = '与我联系'
 
 const massages = {
+  'state.loading': '加载中',
+  'state.error.network': '网络异常',
   'nav.contact': contact,
   'header.title': '我是一名前端开发工程师&UX设计师',
   'header.description': '用业界最佳实践做Web/App开发（React/React Native/Redux/响应式设计)',

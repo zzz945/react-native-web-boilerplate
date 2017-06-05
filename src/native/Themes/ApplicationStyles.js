@@ -35,15 +35,15 @@ const ApplicationStyles = {
       textAlign: 'center'
     },
     subtitle: {
-      color: Colors.snow,
+      color: Colors.textColor,
       padding: Metrics.smallMargin,
       marginBottom: Metrics.smallMargin,
       marginHorizontal: Metrics.smallMargin
     },
     titleText: {
       ...Fonts.style.h2,
-      fontSize: 14,
-      color: Colors.text
+      fontSize: 18,
+      color: Colors.textColor
     }
   },
   darkLabelContainer: {

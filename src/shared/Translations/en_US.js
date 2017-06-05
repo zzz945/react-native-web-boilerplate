@@ -2,6 +2,8 @@
 const contact = 'CONTACT'
 
 const massages = {
+  'state.loading': 'Loading',
+  'state.error.network': 'Network error',
   'nav.contact': contact,
   'header.title': 'I am a front-end developer & designer',
   'header.description': 'Web/App Developing with best practice (React/React Native/Redux/Responsive Design)',
