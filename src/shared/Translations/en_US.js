@@ -2,6 +2,7 @@
 const contact = 'CONTACT'
 
 const massages = {
+  'email': 'EMAIL',
   'state.loading': 'Loading',
   'state.error.network': 'Network error',
   'nav.contact': contact,
@@ -23,6 +24,15 @@ const massages = {
   'contact.title': 'WORK FOR YOU',
   'contact.description': 'I’m currently available for freelance work. Part-time and reomte work is acceptable and if you have a suitable full-time work for me, I can also join your company. If you just want to discuss something about design and development with me, welcome, we learn from each other.',
   'contact.button.title': contact,
-  'contact.button.description': 'Let\'s create imaginative products together'
+  'contact.button.description': 'Let\'s create imaginative products together',
+  'messages.title': contact,
+  'messages.description': 'I will reply as soon as possible',
+  'messages.form.title': 'TITLE',
+  'messages.form.email': 'EMAIL',
+  'messages.form.content': 'CONTENT',
+  'messages.button.send': 'SEND',
+  'messages.button.cancel': 'CANCEL',
+  'messages.modal.ok': 'OK',
+  'messages.modal.content': 'You message is sended successfully.'
 }
 export default massages

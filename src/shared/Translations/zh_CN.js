@@ -1,6 +1,7 @@
 const contact = '与我联系'
 
 const massages = {
+  'email': '邮箱',
   'state.loading': '加载中',
   'state.error.network': '网络异常',
   'nav.contact': contact,
@@ -22,6 +23,15 @@ const massages = {
   'contact.title': '为您工作',
   'contact.description': '我现在是自由职业者，目前有足够的空闲时间，接受项目外包、兼职和远程的工作机会，如果有合适的全职工作，我也考虑到您的公司入职。同时欢迎有需要的朋友与我联系，欢迎想讨论设计和开发的朋友联系我，我们互相学习。',
   'contact.button.title': contact,
-  'contact.button.description': '共同打造富有想象力的产品'
+  'contact.button.description': '共同打造富有想象力的产品',
+  'messages.title': contact,
+  'messages.description': '我会尽快回复',
+  'messages.form.title': '标题',
+  'messages.form.email': '您的邮箱',
+  'messages.form.content': '内容',
+  'messages.button.send': '发送',
+  'messages.button.cancel': '取消',
+  'messages.modal.ok': '知道了',
+  'messages.modal.content': '您的消息已成功发送'
 }
 export default massages

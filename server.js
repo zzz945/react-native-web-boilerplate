@@ -62,6 +62,15 @@ server.register(require('inert'), (err) => {
       })
     }
   })
+
+  server.route({
+    method: 'POST',
+    path: '/message',
+    handler: function (request, reply) {
+      console.log(request.payload)
+      reply('ok')
+    }
+  })
 })
 
 function home (request, reply, locale) {

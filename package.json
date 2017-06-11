@@ -40,15 +40,19 @@
     "mongoose": "^4.10.4",
     "querystringify": "0.0.4",
     "ramda": "^0.23.0",
-    "react": "~15.4.2",
-    "react-dom": "~15.4.2",
+    "react": "16.0.0-alpha.6",
+    "react-dom": "16.0.0-alpha.6",
     "react-intl": "^2.3.0",
-    "react-native": "0.42.0",
+    "react-native": "0.43.3",
     "react-native-animatable": "^1.2.0",
     "react-native-config": "^0.2.1",
     "react-native-device-info": "^0.10.2",
     "react-native-drawer": "^2.3.0",
     "react-native-i18n": "^1.0.0",
+    "react-native-material-kit": "^0.4.1",
+    "react-native-material-ui": "^1.12.0",
+    "react-native-modal": "^2.4.0",
+    "react-native-textinput-effects": "^0.3.1",
     "react-native-vector-icons": "^4.1.1",
     "react-navigation": "^1.0.0-beta.7",
     "react-redux": "^5.0.2",
@@ -117,5 +121,10 @@
     "ghooks": {
       "pre-commit": "if [ -d 'ignite-base' ]; then cd ignite-base; fi; npm run lint"
     }
+  },
+  "rnpm": {
+    "assets": [
+      "./public/assets"
+    ]
   }
 }

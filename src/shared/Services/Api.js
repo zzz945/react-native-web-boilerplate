@@ -42,6 +42,7 @@ const create = (baseURL = 'http://localhost:8000/') => {
   // way at this level.
   //
   const getVisit = () => api.get('visit')
+  const sendMessage = (message) => api.post('message', {message: message})
 
   // ------
   // STEP 3
@@ -57,7 +58,8 @@ const create = (baseURL = 'http://localhost:8000/') => {
   //
   return {
     // a list of the API functions from step 2
-    getVisit
+    getVisit,
+    sendMessage
   }
 }
 

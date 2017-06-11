@@ -2,6 +2,7 @@ import '../Config'
 import React, { Component } from 'react'
 import { Text } from 'react-native'
 import { Provider } from 'react-redux'
+import { COLOR, ThemeProvider } from 'react-native-material-ui'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
 
@@ -14,6 +15,24 @@ addLocaleData([...enLocaleData, ...zhLocaleData])
 
 // create our store
 const store = createStore()
+
+const uiTheme = {
+  palette: {
+    primaryColor: '#00bbeb',
+    primary2Color: '#007e9f',
+    primary3Color: '#454c53',
+    accentColor: COLOR.pink500,
+    textColor: '#333436',
+    secondaryTextColor: '#454c53',
+    thirdTextColor: '#d7d7d7',
+    alternateTextColor: 'white',
+    alternateSecondaryTextColor: '#e0e0e0',
+    canvasColor: 'white',
+    borderColor: '#e0e0e0',
+    disabledColor: '#e0e0e0',
+    shadowColor: '#424242'
+  }
+}
 
 /**
  * Provides an entry point into our application.  Both index.ios.js and index.android.js
@@ -33,7 +52,9 @@ class App extends Component {
           locale={locale}
           messages={locale === 'en' ? require('../../shared/Translations/en_US').default : require('../../shared/Translations/zh_CN').default}
           textComponent={Text}>
-          <RootContainer />
+          <ThemeProvider uiTheme={uiTheme}>
+            <RootContainer />
+          </ThemeProvider>
         </IntlProvider>
       </Provider>
     )
