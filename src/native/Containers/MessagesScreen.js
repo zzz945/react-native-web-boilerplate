@@ -39,7 +39,6 @@ class MessagesScreen extends React.Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    console.tron.log(nextProps)
     if (nextProps !== this.props && this.props.sending &&
         !nextProps.sending && nextProps.error === null) {
       this.setState({modalVisible: true})

@@ -1,5 +1,6 @@
 import en from './src/shared/translations/en_US.js'
 import zh from './src/shared/translations/zh_CN.js'
+import ENV from './ENV'
 
 const Hapi = require('hapi')
 
@@ -67,7 +68,34 @@ server.register(require('inert'), (err) => {
     method: 'POST',
     path: '/message',
     handler: function (request, reply) {
-      console.log(request.payload)
+      const {emailConfig} = ENV
+      const {title, email, content} = request.payload.message
+      const nodemailer = require('nodemailer')
+      // create reusable transporter object using the default SMTP transport
+      let transporter = nodemailer.createTransport({
+        host: 'smtp.163.com',
+        port: 465,
+        secure: true, // secure:true for port 465, secure:false for port 587
+        auth: {
+          user: emailConfig.address,
+          pass: emailConfig.password
+        }
+      })
+
+      // setup email data with unicode symbols
+      let mailOptions = {
+        from: `"访客" <${emailConfig.address}>`, // sender address
+        to: emailConfig.address, // list of receivers
+        subject: '来自我的个人网站的访客', // Subject line
+        html: `<p>标题: ${title}</p><p>邮箱: ${email}</p><p>内容: ${content}</p>` // plain text body
+      }
+      // send mail with defined transport object
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error)
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response)
+      })
       reply('ok')
     }
   })

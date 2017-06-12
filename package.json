@@ -38,6 +38,7 @@
     "lodash": "^4.17.2",
     "material-ui": "^0.18.1",
     "mongoose": "^4.10.4",
+    "nodemailer": "^4.0.1",
     "querystringify": "0.0.4",
     "ramda": "^0.23.0",
     "react": "16.0.0-alpha.6",

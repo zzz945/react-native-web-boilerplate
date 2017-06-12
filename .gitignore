@@ -44,3 +44,6 @@ build/
 .gradle
 local.properties
 *.iml
+
+# For username and password
+ENV.js
