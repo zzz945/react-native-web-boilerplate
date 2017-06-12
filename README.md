@@ -14,17 +14,19 @@
 
 ## :arrow_forward: How to Run App
 
-1. cd to the repo
-2. Run Build for either OS
+1. Install mongodb
+  * https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+2. Run the server
+  * `npm run server-start`
+3. Run Build for either OS
   * for iOS
     * run `react-native run-ios`
   * for Android
     * run `react-native run-android`
-  * for Web (development without server rendering and server api)
+  * for Web (development without server rendering)
     * run `npm run web-start`
   * for Web (production)
-    * install mongodb
-    * run `npm run server-start`
+    * run `npm run web-build`
     * open localhost:8000 in browser
 
 ## :no_entry_sign: Standard Compliant
