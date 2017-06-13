@@ -14,7 +14,7 @@
 
 ## :arrow_forward: How to Run App
 
-1. Install mongodb
+1. Install and run mongodb
   * https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 2. Run the server
   * create ENV.js in the project root
