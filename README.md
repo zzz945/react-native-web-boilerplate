@@ -17,6 +17,15 @@
 1. Install mongodb
   * https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 2. Run the server
+  * create ENV.js in the project root
+    ```
+    export default {
+      emailConfig: {
+        address: 'example@xx.com',
+        password: '......'
+      }
+    }
+    ```
   * `npm run server-start`
 3. Run Build for either OS
   * for iOS
