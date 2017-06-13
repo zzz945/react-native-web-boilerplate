@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import styled from 'styled-components'
 import {FormattedMessage} from 'react-intl'
-import {Center, Link} from './CommonStyledComponents'
+import {Center, RLink} from './CommonStyledComponents'
 import Svg from '../Images/Svg'
 
 const Container = muiThemeable()(styled(Center)`
@@ -45,7 +45,7 @@ class HireMeButton extends Component {
     let { hover } = this.state
 
     return (
-      <Link href='mailto:zhangdaiyan@163.com'>
+      <RLink style={{}} to='/message'>
         <Container onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <Background hover={hover} />
           <div style={{zIndex: 100, color: hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor}}>
@@ -56,7 +56,7 @@ class HireMeButton extends Component {
             <p style={{textAlign: 'center', lineHeight: 2, fontSize: 12, margin: 0}}><FormattedMessage id='contact.button.description' /></p>
           </div>
         </Container>
-      </Link>
+      </RLink>
     )
   }
 }

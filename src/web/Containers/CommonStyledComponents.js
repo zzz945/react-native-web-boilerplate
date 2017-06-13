@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Link as RouteLink} from 'react-router-dom'
 import muiThemeable from 'material-ui/styles/muiThemeable'
 
 export const HCenter = styled.div`
@@ -51,6 +52,11 @@ export const ContentLight = muiThemeable()(styled(ContentDark)`
 `)
 
 export const Link = muiThemeable()(styled.a`
+  text-decoration: none;
+  color: ${props => props.muiTheme.palette.primary2Color};
+`)
+
+export const RLink = muiThemeable()(styled(RouteLink)`
   text-decoration: none;
   color: ${props => props.muiTheme.palette.primary2Color};
 `)

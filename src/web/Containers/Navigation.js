@@ -8,13 +8,15 @@ import {
 
 import muiThemeable from 'material-ui/styles/muiThemeable'
 import AboutMe from './AboutMe'
+import Message from './Message'
 
 class Navigation extends Component {
   render () {
     return (
       <Router>
         <div>
-          <AboutMe />
+          <Route exact path='/' component={AboutMe} />
+          <Route path='/message' component={Message} />
         </div>
       </Router>
     )

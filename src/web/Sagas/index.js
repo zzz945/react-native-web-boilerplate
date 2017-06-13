@@ -7,11 +7,13 @@ import DebugConfig from '../../shared/Config/DebugConfig'
 
 import { StartupTypes } from '../../shared/Redux/StartupRedux'
 import { LoginTypes } from '../../shared/Redux/LoginRedux'
+import { MessageTypes } from '../../shared/Redux/MessageRedux'
 
 /* ------------- Sagas ------------- */
 
 import { startup } from '../../shared/Sagas/StartupSagas'
 import { login } from '../../shared/Sagas/LoginSagas'
+import { message } from '../../shared/Sagas/MessageSagas'
 
 /* ------------- API ------------- */
 
@@ -25,6 +27,7 @@ export default function * root () {
   yield [
     // some sagas only receive an action
     takeLatest(StartupTypes.STARTUP, startup),
-    takeLatest(LoginTypes.LOGIN_REQUEST, login)
+    takeLatest(LoginTypes.LOGIN_REQUEST, login),
+    takeLatest(MessageTypes.MESSAGE_POST, message, api)
   ]
 }

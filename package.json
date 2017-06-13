@@ -83,14 +83,14 @@
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.4.0",
     "react-native-mock": "^0.3.1",
+    "react-scripts": "0.9.5",
     "reactotron-apisauce": "^1.7.0",
     "reactotron-react-js": "^1.10.0",
     "reactotron-react-native": "^1.7.0",
     "reactotron-redux": "^1.7.0",
     "reactotron-redux-saga": "^1.7.0",
     "snazzy": "^6.0.0",
-    "standard": "8.6.0",
-    "react-scripts": "0.9.5"
+    "standard": "8.6.0"
   },
   "ava": {
     "files": [
@@ -127,5 +127,6 @@
     "assets": [
       "./public/assets"
     ]
-  }
+  },
+  "proxy": "http://localhost:8000/"
 }

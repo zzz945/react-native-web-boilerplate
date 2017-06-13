@@ -103,7 +103,7 @@ server.register(require('inert'), (err) => {
 
 function home (request, reply, locale) {
   VisitModel.findOneAndUpdate({name: 'visit'}, {$inc: {visit: 1}}, {new: true, upsert: true}).then(result => {
-    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/favicon.ico"><style>html{scroll-behavior:smooth}</style><title>一个前端开发工程师&UX设计师的个人网站</title><link href="/static/css/main.0c5dad92.css" rel="stylesheet"></head><body><div id="root"></div><script>window.__VISIT_COUNT__ = ${result.visit};window.__LOCALE__=${JSON.stringify(locale)};window.__TRANSLATION__=${locale === 'en' ? JSON.stringify(en) : JSON.stringify(zh)}</script><script type="text/javascript" src="/static/js/main.0e96a4dc.js"></script></body></html>`
+    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/favicon.ico"><style>html{scroll-behavior:smooth}</style><title>一个前端开发工程师&UX设计师的个人网站</title><link href="/static/css/main.0c5dad92.css" rel="stylesheet"></head><body><div id="root"></div><script>window.__VISIT_COUNT__ = ${result.visit};window.__LOCALE__=${JSON.stringify(locale)};window.__TRANSLATION__=${locale === 'en' ? JSON.stringify(en) : JSON.stringify(zh)}</script><script type="text/javascript" src="/static/js/main.f77dc6fd.js"></script></body></html>`
     reply(html)
   })
 }

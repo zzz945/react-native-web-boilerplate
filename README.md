@@ -36,6 +36,19 @@
     * run `npm run web-start`
   * for Web (production)
     * run `npm run web-build`
+    * Edit server.js, replace *** with the content of ./build/index.html
+      ```
+        function home (request, reply, locale) {
+          VisitModel.findOneAndUpdate({name: 'visit'}, {$inc: {visit: 1}}, {new: true, upsert: true}).then(result => {
+            const html = `***`
+            reply(html)
+          })
+        }
+      ```
+    * And insert the script below inside the body tag
+      ```
+        <script>window.__VISIT_COUNT__ = ${result.visit};window.__LOCALE__=${JSON.stringify(locale)};window.__TRANSLATION__=${locale === 'en' ? JSON.stringify(en) : JSON.stringify(zh)}</script>
+      ```
     * open localhost:8000 in browser
 
 ## :no_entry_sign: Standard Compliant

@@ -102,7 +102,7 @@ class Header extends Component {
   render () {
     return (
       <Container>
-        <Topbar isTransparent={!(this.state.titleOpacity === 0)} />
+        <Topbar history={this.props.history} isTransparent={!(this.state.titleOpacity === 0)} />
         <Background>
           <div style={{zIndex: 1000}}>
             <p style={{opacity: this.state.titleOpacity, fontSize: 48, color: this.props.muiTheme.palette.alternateTextColor, margin: 0}}>

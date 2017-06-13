@@ -35,6 +35,10 @@ const Logo = muiThemeable()(styled.a`
 `)
 
 class Topbar extends Component {
+  handleClick = () => {
+    console.log(this.props)
+    this.props.history.push('/message')
+  }
   render () {
     let {isTransparent} = this.props
     let {alternateTextColor, thirdTextColor} = this.props.muiTheme.palette
@@ -46,7 +50,7 @@ class Topbar extends Component {
             <span style={{fontSize: 12, color: isTransparent ? alternateTextColor : thirdTextColor}}>
               <LocaleLink isTransparent={isTransparent} href='http://localhost:8000/zh'>中文</LocaleLink>/<LocaleLink isTransparent={isTransparent} href='http://localhost:8000/en'>English</LocaleLink>
             </span>
-            <RaisedButton href='mailto:zhangdaiyan@163.com' style={{fontSize: 12, marginLeft: 24}} label={<FormattedMessage id='nav.contact' />} primary />
+            <RaisedButton onClick={this.handleClick} style={{fontSize: 12, marginLeft: 24}} label={<FormattedMessage id='nav.contact' />} primary />
           </div>
         </Center>
       </Container>

@@ -31,7 +31,7 @@ const massages = {
   'messages.form.email': 'EMAIL',
   'messages.form.content': 'CONTENT',
   'messages.button.send': 'SEND',
-  'messages.button.cancel': 'CANCEL',
+  'messages.button.cancel': 'BACK',
   'messages.modal.ok': 'OK',
   'messages.modal.content': 'You message is sended successfully.'
 }

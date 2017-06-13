@@ -30,7 +30,7 @@ const massages = {
   'messages.form.email': '您的邮箱',
   'messages.form.content': '内容',
   'messages.button.send': '发送',
-  'messages.button.cancel': '取消',
+  'messages.button.cancel': '返回',
   'messages.modal.ok': '知道了',
   'messages.modal.content': '您的消息已成功发送'
 }

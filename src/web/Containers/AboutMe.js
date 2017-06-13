@@ -44,7 +44,7 @@ class AboutMe extends Component {
     const visitCount = window.__VISIT_COUNT__
     return (
       <Container>
-        <Header />
+        <Header history={this.props.history} />
         <Element name='pageContent'>
           <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: this.props.muiTheme.sectionHeight, padding: `60px ${this.props.muiTheme.padding}px`, boxSizing: 'border-box', background: `linear-gradient(to bottom, white 50%, ${this.props.muiTheme.palette.primary3Color} 50%)`}}>
             <Center style={{flex: 1}}>
