@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import StartupActions from '../../shared/Redux/StartupRedux'
 import VisitActions from '../Redux/VisitRedux'
 import ReduxPersist from '../Config/ReduxPersist'
-
 // Styles
 import styles from './Styles/RootContainerStyles'
 

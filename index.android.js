@@ -1,5 +1,6 @@
-import './src/shared/Config/ReactotronConfig'
+import Platform from './src/shared/Lib/Platform'
+import './src/native/Config/ReactotronConfig'
 import { AppRegistry } from 'react-native'
-import App from './src/native/Containers/App'
 
-AppRegistry.registerComponent('IgniteBoilerplate', () => App)
+Platform.os = 'android'
+AppRegistry.registerComponent('IgniteBoilerplate', () => require('./src/native/Containers/App').default)

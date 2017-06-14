@@ -25,7 +25,6 @@ exports.default = {
   fontFamily: 'Heiti SC, Roboto, sans-serif',
   borderRadius: 2,
   sectionHeight: 800,
-  padding: 20,
   palette: {
     primary1Color: '#00bbeb',
     primary2Color: '#007e9f',

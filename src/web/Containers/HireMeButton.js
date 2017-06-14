@@ -45,15 +45,34 @@ class HireMeButton extends Component {
     let { hover } = this.state
 
     return (
-      <RLink style={{}} to='/message'>
+      <RLink to='/message'>
         <Container onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <Background hover={hover} />
-          <div style={{zIndex: 100, color: hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor}}>
+          <div
+            style={{
+              zIndex: 100,
+              color: hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor}}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <Svg.SvgCustomIcon svgData={Svg.email} color={hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor} />
-              <p style={{fontWeight: 'bold', lineHeight: 2, fontSize: 24, margin: '0 8px'}}><FormattedMessage id='contact.button.title' /></p>
+              <Svg.SvgCustomIcon
+                svgData={Svg.pen}
+                color={hover ? this.props.muiTheme.palette.alternateTextColor : this.props.muiTheme.palette.textColor} />
+              <p
+                style={{
+                  fontWeight: 'bold',
+                  lineHeight: 2,
+                  fontSize: 24,
+                  margin: '0 8px'}}>
+                <FormattedMessage id='contact.button.title' />
+              </p>
             </div>
-            <p style={{textAlign: 'center', lineHeight: 2, fontSize: 12, margin: 0}}><FormattedMessage id='contact.button.description' /></p>
+            <p
+              style={{
+                textAlign: 'center',
+                lineHeight: 2,
+                fontSize: 12,
+                margin: 0}}>
+              <FormattedMessage id='contact.button.description' />
+            </p>
           </div>
         </Container>
       </RLink>

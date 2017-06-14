@@ -8,6 +8,7 @@ import {Link} from 'react-scroll'
 import {HCenter, ContentContainer} from './CommonStyledComponents'
 import Topbar from './Topbar'
 import ViewMyWorkButton from './ViewMyWorkButton'
+import Images from '../Themes/Images'
 
 const Container = muiThemeable()(styled.div`
 `)
@@ -49,7 +50,13 @@ const BackgroundBlur = styled.div`
 const Scroll = () => {
   return (
     <HCenter style={{zIndex: 1000, position: 'relative', height: 40, marginTop: -40}}>
-      <Link style={{cursor: 'pointer'}} to='pageContent' smooth duration={500}><img style={{display: 'block'}} src={require('../Images/scroll.png')} alt='scroll' /></Link>
+      <Link
+        style={{cursor: 'pointer'}}
+        to='pageContent'
+        smooth
+        duration={500}>
+        <img style={{display: 'block'}} src={Images.scroll} alt='scroll' />
+      </Link>
     </HCenter>
   )
 }
@@ -105,10 +112,20 @@ class Header extends Component {
         <Topbar history={this.props.history} isTransparent={!(this.state.titleOpacity === 0)} />
         <Background>
           <div style={{zIndex: 1000}}>
-            <p style={{opacity: this.state.titleOpacity, fontSize: 48, color: this.props.muiTheme.palette.alternateTextColor, margin: 0}}>
+            <p
+              style={{
+                opacity: this.state.titleOpacity,
+                fontSize: 48,
+                color: this.props.muiTheme.palette.alternateTextColor,
+                margin: 0}}>
               <FormattedMessage id='header.title' />
             </p>
-            <p style={{opacity: this.state.titleOpacity, fontSize: 14, color: this.props.muiTheme.palette.alternateTextColor, margin: '20px 0 28px 0'}}>
+            <p
+              style={{
+                opacity: this.state.titleOpacity,
+                fontSize: 14,
+                color: this.props.muiTheme.palette.alternateTextColor,
+                margin: '20px 0 28px 0'}}>
               <FormattedMessage id='header.description' />
             </p>
             <ViewMyWorkButton opacity={this.state.titleOpacity} />

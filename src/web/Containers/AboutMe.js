@@ -10,6 +10,7 @@ import Header from './Header'
 import Swipper from './Swipper'
 import Footer from './Footer'
 import HireMeButton from './HireMeButton'
+import Images from '../Themes/Images'
 
 const Container = styled.div`
 `
@@ -46,7 +47,16 @@ class AboutMe extends Component {
       <Container>
         <Header history={this.props.history} />
         <Element name='pageContent'>
-          <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', height: this.props.muiTheme.sectionHeight, padding: `60px ${this.props.muiTheme.padding}px`, boxSizing: 'border-box', background: `linear-gradient(to bottom, white 50%, ${this.props.muiTheme.palette.primary3Color} 50%)`}}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              height: this.props.muiTheme.sectionHeight,
+              padding: `60px ${this.props.muiTheme.spacing.desktopGutter}px`,
+              boxSizing: 'border-box',
+              background: `linear-gradient(to bottom, white 50%, ${this.props.muiTheme.palette.primary3Color} 50%)`
+            }}>
             <Center style={{flex: 1}}>
               <TitleDark>
                 <FormattedMessage
@@ -57,7 +67,7 @@ class AboutMe extends Component {
               </TitleDark>
             </Center>
             <Avatar
-              src={require('../Images/me.jpg')}
+              src={Images.me}
               size={120}
               backgroundColor={'white'}
               style={{border: '2px solid white'}}
@@ -81,7 +91,7 @@ class AboutMe extends Component {
               <ContentContainer>
                 <SubTitleDark><FormattedMessage id='skills.subtitle' /></SubTitleDark>
                 <Center style={{marginTop: 120}}>
-                  <img src={require('../Images/phones.png')} style={{width: '90%'}} alt='phones' />
+                  <img src={Images.phones} style={{width: '90%'}} alt='phones' />
                 </Center>
                 <ContentDark style={{marginTop: 60}}><FormattedMessage id='skills.content' /></ContentDark>
               </ContentContainer>
@@ -89,7 +99,10 @@ class AboutMe extends Component {
           </Ability>
           <Swipper />
           <HCenter>
-            <ContentContainer style={{display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 800}}>
+            <ContentContainer
+              style={{
+                display: 'flex', flexDirection: 'column', alignItems: 'center', maxWidth: 800
+              }}>
               <br /><br /><br />
               <TitleDark><FormattedMessage id='contact.title' /></TitleDark>
               <ContentDark>

@@ -45,9 +45,16 @@ class HireMeButton extends Component {
 
     return (
       <Link style={{display: 'inline-block'}} href='https://github.com/zzz945/'>
-        <Container style={{zIndex: 100, opacity: this.props.opacity}} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
+        <Container
+          style={{zIndex: 100, opacity: this.props.opacity}}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}>
           <Background hover={hover} />
-          <p style={{zIndex: 1000, color: hover ? this.props.muiTheme.palette.primary1Color : this.props.muiTheme.palette.alternateTextColor}}>
+          <p
+            style={{
+              zIndex: 1000,
+              color: hover ? this.props.muiTheme.palette.primary1Color : this.props.muiTheme.palette.alternateTextColor
+            }}>
             <FormattedMessage id='header.works' />
           </p>
         </Container>

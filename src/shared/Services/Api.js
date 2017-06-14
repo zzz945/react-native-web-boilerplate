@@ -1,8 +1,14 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
+import Platform from '../Lib/Platform'
 
 // our "constructor"
-const create = (baseURL = '/') => {
+const create = () => {
+  let baseURL = 'http://zhangdaiyan.cn:8000'
+  if (process.env.NODE_ENV === 'development') {
+    if (Platform.os === 'web') baseURL = '/' // proxy
+    else baseURL = 'http://localhost:8000/'
+  }
   // ------
   // STEP 1
   // ------

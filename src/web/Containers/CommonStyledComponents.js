@@ -62,6 +62,6 @@ export const RLink = muiThemeable()(styled(RouteLink)`
 `)
 
 export const ContentContainer = muiThemeable()(styled.div`
-  padding: ${props => props.muiTheme.padding}px;
+  padding: ${props => props.muiTheme.spacing.desktopGutter}px;
   box-sizing: border-box;
 `)

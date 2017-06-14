@@ -7,13 +7,13 @@ import {FormattedMessage} from 'react-intl'
 import {Center, Link} from './CommonStyledComponents'
 
 const Container = muiThemeable()(styled.nav`
-  z-index: 1001;
+  z-index: ${props => props.muiTheme.zIndex.appBar};
   display: flex;
   position: fixed;
   top: 0;
   height: 75px;
   width: 100%;
-  box-shadow: 0px 0px 3px ${props => props.muiTheme.palette.shadowColor};;
+  box-shadow: 0px 0px 3px ${props => props.muiTheme.palette.shadowColor};
   background: ${props => props.isTransparent ? 'rgba(255, 255, 255, 0.25)' : props.muiTheme.palette.canvasColor};
   transition: all .3s ease-in-out;
 `)
@@ -44,13 +44,27 @@ class Topbar extends Component {
     let {alternateTextColor, thirdTextColor} = this.props.muiTheme.palette
     return (
       <Container isTransparent={isTransparent}>
-        <Center style={{flex: 1, padding: `0 ${this.props.muiTheme.padding}px`, justifyContent: 'space-between'}}>
+        <Center style={{flex: 1, padding: `0 ${this.props.muiTheme.spacing.desktopGutter}px`, justifyContent: 'space-between'}}>
           <Logo isTransparent={isTransparent} href='#'>ET</Logo>
           <div>
             <span style={{fontSize: 12, color: isTransparent ? alternateTextColor : thirdTextColor}}>
-              <LocaleLink isTransparent={isTransparent} href='http://localhost:8000/zh'>中文</LocaleLink>/<LocaleLink isTransparent={isTransparent} href='http://localhost:8000/en'>English</LocaleLink>
+              <LocaleLink
+                isTransparent={isTransparent}
+                href='http://localhost:8000/zh'>
+                中文
+              </LocaleLink>
+              /
+              <LocaleLink
+                isTransparent={isTransparent}
+                href='http://localhost:8000/en'>
+                English
+              </LocaleLink>
             </span>
-            <RaisedButton onClick={this.handleClick} style={{fontSize: 12, marginLeft: 24}} label={<FormattedMessage id='nav.contact' />} primary />
+            <RaisedButton
+              onClick={this.handleClick}
+              style={{fontSize: 12, marginLeft: 24}}
+              label={<FormattedMessage id='nav.contact' />}
+              primary />
           </div>
         </Center>
       </Container>

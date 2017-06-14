@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import {FormattedMessage} from 'react-intl'
 import {HCenter, Center, ContentLight, Link} from './CommonStyledComponents'
 import Pagination from '../Components/SwipperPagination/Pagination'
+import Images from '../Themes/Images'
 
 const Swiper = styled(SwipeableViews)`
   width: 800px;
@@ -55,34 +56,72 @@ class Swipper extends Component {
 
   render () {
     return (
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', background: this.props.muiTheme.palette.primary3Color}}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          position: 'relative',
+          background: this.props.muiTheme.palette.primary3Color}}>
         <ArrowWrapper>
-          <a style={{visibility: this.state.index === 0 ? 'hidden' : 'visible', cursor: 'pointer'}} onClick={this.goLeft}><img style={{display: 'block'}} src={require('../Images/left-arrow.png')} alt='left-arrow' /></a>
-          <a style={{visibility: this.state.index === 1 ? 'hidden' : 'visible', cursor: 'pointer'}} onClick={this.goRight}><img style={{display: 'block'}} src={require('../Images/right-arrow.png')} alt='left-arrow' /></a>
+          <a
+            style={{visibility: this.state.index === 0 ? 'hidden' : 'visible', cursor: 'pointer'}}
+            onClick={this.goLeft}>
+            <img
+              style={{display: 'block'}}
+              src={Images.leftArrow}
+              alt='left-arrow' />
+          </a>
+          <a
+            style={{visibility: this.state.index === 1 ? 'hidden' : 'visible', cursor: 'pointer'}}
+            onClick={this.goRight}>
+            <img
+              style={{display: 'block'}}
+              src={Images.rightArrow}
+              alt='left-arrow' />
+          </a>
         </ArrowWrapper>
-        <p style={{fontSize: 14, color: 'black', fontWeight: 'bold', marginTop: 80, marginBottom: 20}}><FormattedMessage id='bestpractice.title1' /></p>
-        <p style={{fontSize: 24, color: this.props.muiTheme.palette.alternateTextColor, marginTop: 0, marginBottom: 20}}><FormattedMessage id='bestpractice.title2' /></p>
-        <Swiper containerStyle={{width: '100%'}} index={this.state.index} springConfig={{duration: '0.8s', easeFunction: 'ease-out', delay: '0s'}}>
-          <Center style={{padding: this.props.muiTheme.padding}}>
+        <p style={{fontSize: 14, color: 'black', fontWeight: 'bold', marginTop: 80, marginBottom: 20}}>
+          <FormattedMessage id='bestpractice.title1' />
+        </p>
+        <p style={{fontSize: 24, color: this.props.muiTheme.palette.alternateTextColor, marginTop: 0, marginBottom: 20}}>
+          <FormattedMessage id='bestpractice.title2' />
+        </p>
+        <Swiper
+          containerStyle={{width: '100%'}}
+          index={this.state.index}
+          springConfig={{duration: '0.8s', easeFunction: 'ease-out', delay: '0s'}}>
+          <Center style={{padding: this.props.muiTheme.spacing.desktopGutter}}>
             <div>
               <ContentLight style={{color: this.props.muiTheme.palette.alternateSecondaryTextColor}}>
-                <span style={{fontSize: 32}}><FormattedMessage id='bestpractice.design.title' /></span> <FormattedMessage id='bestpractice.design.content' values={{link1: <Link href='http://goodui.org'>goodui</Link>, link2: <Link href='https://www.uxpin.com/studio/ebooks/'>uxpin</Link>}} />
+                <span style={{fontSize: 32}}><FormattedMessage id='bestpractice.design.title' /></span>&nbsp;
+                <FormattedMessage
+                  id='bestpractice.design.content'
+                  values={{
+                    link1: <Link href='http://goodui.org'>goodui</Link>,
+                    link2: <Link href='https://www.uxpin.com/studio/ebooks/'>uxpin</Link>
+                  }} />
               </ContentLight>
               <br /><br />
               <HCenter>
-                <img style={{width: '100%'}} src={require('../Images/slider2.jpg')} alt='slider2' />
+                <img style={{width: '100%'}} src={Images.slider2} alt='slider2' />
               </HCenter>
               <br /><br />
             </div>
           </Center>
-          <Center style={{padding: this.props.muiTheme.padding}}>
+          <Center style={{padding: this.props.muiTheme.spacing.desktopGutter}}>
             <div>
               <ContentLight style={{color: this.props.muiTheme.palette.alternateSecondaryTextColor}}>
-                <span style={{fontSize: 32}}><FormattedMessage id='bestpractice.develop.title' /></span> <FormattedMessage id='bestpractice.develop.content' values={{link: <Link href='https://github.com/zzz945/react-native-web-boilerplate'>react-native-web-boilerplate</Link>}} />
+                <span style={{fontSize: 32}}><FormattedMessage id='bestpractice.develop.title' /></span>&nbsp;
+                <FormattedMessage
+                  id='bestpractice.develop.content'
+                  values={{
+                    link: <Link href='https://github.com/zzz945/react-native-web-boilerplate'>react-native-web-boilerplate</Link>
+                  }} />
               </ContentLight>
               <br />
               <HCenter>
-                <img style={{width: '100%'}} src={require('../Images/slider1.jpg')} alt='slider1' />
+                <img style={{width: '100%'}} src={Images.slider1} alt='slider1' />
               </HCenter>
               <br />
             </div>

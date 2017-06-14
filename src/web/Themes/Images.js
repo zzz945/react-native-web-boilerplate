@@ -1,25 +1,17 @@
 // leave off @2x/@3x
 const images = {
-  logo: require('../Images/ir.png'),
-  clearLogo: require('../Images/top_logo.png'),
-  launch: require('../Images/launch-icon.png'),
-  ready: require('../Images/your-app.png'),
-  ignite: require('../Images/ignite_logo.png'),
-  igniteClear: require('../Images/ignite-logo-transparent.png'),
-  tileBg: require('../Images/tile_bg.png'),
-  background: require('../Images/BG.png'),
-  buttonBackground: require('../Images/button-bg.png'),
-  api: require('../Images/Icons/icon-api-testing.png'),
-  components: require('../Images/Icons/icon-components.png'),
-  deviceInfo: require('../Images/Icons/icon-device-information.png'),
-  faq: require('../Images/Icons/faq-icon.png'),
-  home: require('../Images/Icons/icon-home.png'),
-  theme: require('../Images/Icons/icon-theme.png'),
-  usageExamples: require('../Images/Icons/icon-usage-examples.png'),
-  chevronRight: require('../Images/Icons/chevron-right.png'),
-  hamburger: require('../Images/Icons/hamburger.png'),
-  backButton: require('../Images/Icons/back-button.png'),
-  closeButton: require('../Images/Icons/close-button.png')
+  header: require('../Images/ipad-ui-design-1600-970.jpg'),
+  leftArrow: require('../Images/left-arrow.png'),
+  rightArrow: require('../Images/right-arrow.png'),
+  me: require('../Images/me.png'),
+  phones: require('../Images/phones.png'),
+  qq: require('../Images/qq.jpg'),
+  wechat: require('../Images/wechat.jpg'),
+  scroll: require('../Images/scroll.png'),
+  slider1: require('../Images/slider1.jpg'),
+  slider2: require('../Images/slider2.jpg'),
+  slider3: require('../Images/slider3.jpg'),
+  slider4: require('../Images/slider4.jpg')
 }
 
 export default images

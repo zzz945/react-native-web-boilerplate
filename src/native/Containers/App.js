@@ -12,7 +12,6 @@ import enLocaleData from 'react-intl/locale-data/en'
 import zhLocaleData from 'react-intl/locale-data/zh'
 
 addLocaleData([...enLocaleData, ...zhLocaleData])
-
 // create our store
 const store = createStore()
 
