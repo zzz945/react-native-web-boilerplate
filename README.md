@@ -5,6 +5,10 @@
 
 * The boilerplate contains a simple server based on hapi, a react-web code base and a react native code base, sharing a lot of code including configs redux and sagas. The boilerplate is my personal website and app, I will be happy if you enjoy it.
 
+## Online demo 
+
+* http://59.110.219.108:8000
+
 ## Screenshot
 
 ### Web
