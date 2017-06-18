@@ -11,8 +11,8 @@ import MessageActions from '../../shared/Redux/MessageRedux'
 import Topbar from './Topbar'
 import {HCenter, TitleDark, SubTitleDark} from './CommonStyledComponents'
 
-const Container = styled(HCenter)`
-  margin-top: 100px;
+const Container = styled.div`
+  padding-top: 100px;
 `
 
 class Message extends Component {
@@ -48,42 +48,44 @@ class Message extends Component {
   render () {
     return (
       <Container>
-        <Topbar />
-        <div>
-          <TitleDark><FormattedMessage id='messages.title' /></TitleDark>
-          <SubTitleDark><FormattedMessage id='messages.description' /></SubTitleDark><br />
-          <TextField
-            hintText={<FormattedMessage id='messages.form.title' />}
-            value={this.state.title}
-            onChange={(e, text) => this.setState({title: text})}
-          /><br />
-          <TextField
-            hintText={<FormattedMessage id='messages.form.email' />}
-            value={this.state.email}
-            onChange={(e, text) => this.setState({email: text})}
-          /><br />
-          <TextField
-            hintText={<FormattedMessage id='messages.form.content' />}
-            multiLine
-            rows={2}
-            rowsMax={4}
-            value={this.state.content}
-            onChange={(e, text) => this.setState({content: text})}
-          /><br />
+        <Topbar history={this.props.history} />
+        <HCenter>
           <div>
-            <RaisedButton
-              onClick={this.handleBack}
-              style={{fontSize: 12}}
-              label={<FormattedMessage id='messages.button.cancel' />}
-            />
-            <RaisedButton
-              onClick={this.handleSend}
-              style={{fontSize: 12}}
-              label={<FormattedMessage id='messages.button.send' />}
-              primary
-            />
+            <TitleDark><FormattedMessage id='messages.title' /></TitleDark>
+            <SubTitleDark><FormattedMessage id='messages.description' /></SubTitleDark><br />
+            <TextField
+              hintText={<FormattedMessage id='messages.form.title' />}
+              value={this.state.title}
+              onChange={(e) => this.setState({title: e.target.value})}
+            /><br />
+            <TextField
+              hintText={<FormattedMessage id='messages.form.email' />}
+              value={this.state.email}
+              onChange={(e) => this.setState({email: e.target.value})}
+            /><br />
+            <TextField
+              hintText={<FormattedMessage id='messages.form.content' />}
+              multiLine
+              rows={2}
+              rowsMax={4}
+              value={this.state.content}
+              onChange={(e) => this.setState({content: e.target.value})}
+            /><br />
+            <div>
+              <RaisedButton
+                onClick={this.handleBack}
+                style={{fontSize: 12}}
+                label={<FormattedMessage id='messages.button.cancel' />}
+              />
+              <RaisedButton
+                onClick={this.handleSend}
+                style={{fontSize: 12}}
+                label={<FormattedMessage id='messages.button.send' />}
+                primary
+              />
+            </div>
           </div>
-        </div>
+        </HCenter>
         <Snackbar
           open={this.state.modalVisible}
           message={<FormattedMessage id='messages.modal.content' />}

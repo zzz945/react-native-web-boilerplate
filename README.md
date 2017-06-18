@@ -17,13 +17,16 @@
 1. Install and run mongodb
   * https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 2. Run the server
-  * create ENV.js in the project root
+  * create ENV.js in ./src like this:
     ```
     export default {
       emailConfig: {
-        address: 'example@xx.com',
-        password: '......'
-      }
+        host: 'smtp.163.com',
+        port: '465',
+        address: '18504211831@163.com',
+        password: '***'
+      },
+      baseURL: 'http://localhost:8000/'
     }
     ```
   * `npm run server-start`
@@ -36,19 +39,6 @@
     * run `npm run web-start`
   * for Web (production)
     * run `npm run web-build`
-    * Edit server.js, replace *** with the content of ./build/index.html
-      ```
-        function home (request, reply, locale) {
-          VisitModel.findOneAndUpdate({name: 'visit'}, {$inc: {visit: 1}}, {new: true, upsert: true}).then(result => {
-            const html = `***`
-            reply(html)
-          })
-        }
-      ```
-    * And insert the script below inside the body tag
-      ```
-        <script>window.__VISIT_COUNT__ = ${result.visit};window.__LOCALE__=${JSON.stringify(locale)};window.__TRANSLATION__=${locale === 'en' ? JSON.stringify(en) : JSON.stringify(zh)}</script>
-      ```
     * open localhost:8000 in browser
 
 ## :no_entry_sign: Standard Compliant

@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton'
 import styled from 'styled-components'
 import {FormattedMessage} from 'react-intl'
 
+import ENV from '../../ENV'
 import {Center, Link} from './CommonStyledComponents'
 
 const Container = muiThemeable()(styled.nav`
@@ -36,7 +37,6 @@ const Logo = muiThemeable()(styled.a`
 
 class Topbar extends Component {
   handleClick = () => {
-    console.log(this.props)
     this.props.history.push('/message')
   }
   render () {
@@ -50,13 +50,13 @@ class Topbar extends Component {
             <span style={{fontSize: 12, color: isTransparent ? alternateTextColor : thirdTextColor}}>
               <LocaleLink
                 isTransparent={isTransparent}
-                href='http://localhost:8000/zh'>
+                href={`${ENV.baseURL}zh`}>
                 中文
               </LocaleLink>
               /
               <LocaleLink
                 isTransparent={isTransparent}
-                href='http://localhost:8000/en'>
+                href={`${ENV.baseURL}en`}>
                 English
               </LocaleLink>
             </span>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import {
   BrowserRouter as Router,
-  Route, // eslint-disable-line
+  Route,
   Link // eslint-disable-line
 } from 'react-router-dom'
 
@@ -13,7 +13,7 @@ import Message from './Message'
 class Navigation extends Component {
   render () {
     return (
-      <Router>
+      <Router basename={window.__LOCALE__}>
         <div>
           <Route exact path='/' component={AboutMe} />
           <Route path='/message' component={Message} />
