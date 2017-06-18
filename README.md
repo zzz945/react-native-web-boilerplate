@@ -3,6 +3,24 @@
 
 * A React and React Native boilerplate for web ios and android apps. This project is heavily based on [ignite-ir-next](https://github.com/infinitered/ignite) and  [react-scripts](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
 
+* The boilerplate contains a simple server based on hapi, a react-web code base and a react native code base, sharing a lot of code including configs redux and sagas. The boilerplate is my personal website and app, I will be happy if you enjoy it.
+
+## Screenshot
+
+### Web
+
+* Screenshot1
+![2017-06-18 5 58 18](https://user-images.githubusercontent.com/21496977/27259899-414d0d4a-5450-11e7-9d80-11e66167609d.png)
+* Screenshot2
+![2017-06-18 5 59 30](https://user-images.githubusercontent.com/21496977/27259896-412bd850-5450-11e7-94cc-6c78cff5673c.png)
+* Screenshot3
+![2017-06-18 5 59 47](https://user-images.githubusercontent.com/21496977/27259897-412c6a40-5450-11e7-86ac-b4acafb53905.png)
+
+# Ios/Android
+
+![2017-06-18 6 00 06](https://user-images.githubusercontent.com/21496977/27259898-41326620-5450-11e7-97fe-980ff33267e1.png)
+![2017-06-18 6 00 29](https://user-images.githubusercontent.com/21496977/27259895-41282480-5450-11e7-9f18-d55f0e5a51e8.png)
+
 ## :arrow_up: How to Setup
 
 **Step 1:** git clone this repo:
